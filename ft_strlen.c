@@ -6,11 +6,14 @@
 /*   By: rfani <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 13:28:22 by rfani             #+#    #+#             */
-/*   Updated: 2024/11/25 13:33:00 by rfani            ###   ########.fr       */
+/*   Updated: 2024/11/26 20:35:52 by rfani            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlen(char *s)
+#include "libft.h"
+#include <stdio.h>
+
+size_t	ft_strlen(const char *s)
 {
 	size_t	count;
 
