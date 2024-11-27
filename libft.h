@@ -6,7 +6,7 @@
 /*   By: rfani <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 13:03:25 by rfani             #+#    #+#             */
-/*   Updated: 2024/11/26 20:35:17 by rfani            ###   ########.fr       */
+/*   Updated: 2024/11/27 21:11:52 by rfani            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,6 @@
 # include <stdio.h>
 
 size_t	ft_strlen(const char *s);
+int		ft_isalpha(int c);
 
 #endif

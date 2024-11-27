@@ -1,6 +1,7 @@
 NAME = libft.a
 
 SRC =	ft_strlen.c \
+		ft_isalpha.c \
 
 OBJ = $(SRC:%.c=%.o)
 
@@ -18,6 +19,7 @@ $(NAME) : libft.h $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
 clean :
+	rm $(OBJ)
 	
 fclean : clean
 	rm $(NAME)
