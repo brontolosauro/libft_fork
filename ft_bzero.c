@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfani <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/02 10:59:05 by rfani             #+#    #+#             */
-/*   Updated: 2024/12/02 16:26:37 by rfani            ###   ########.fr       */
+/*   Created: 2024/12/02 16:53:05 by rfani             #+#    #+#             */
+/*   Updated: 2024/12/02 17:07:29 by rfani            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+void	ft_bzero(void *s, size_t len)
 {
 	size_t	i;
-	size_t	dst_len;
-	size_t	src_len;
+	char	*dummy;
 
 	i = 0;
-	dst_len = ft_strlen(dst);
-	src_len = ft_strlen(src);
-	if (dstsize != 0 && dst_len <= dstsize)
+	dummy = s;
+	while (i < len)
 	{
-		while (i < (dstsize - dst_len - 1) && src[i] != '\0')
-		{
-			dst[dst_len + i] = src[i];
-			i++;
-		}
-		dst[dst_len + i + 1] = '\0';
+		dummy[i] = '\0';
+		i++;
 	}
-	return (dst_len + src_len);
 }
