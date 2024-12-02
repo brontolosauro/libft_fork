@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rfani <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/02 10:58:56 by rfani             #+#    #+#             */
+/*   Updated: 2024/12/02 11:16:03 by rfani            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char*	ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	char	*match;
 	int		i;
@@ -12,7 +24,7 @@ char*	ft_strchr(const char *s, int c)
 		if (s[i] == c)
 		{
 			match = (char *)&s[i];
-			break;
+			break ;
 		}
 		i++;
 	}
