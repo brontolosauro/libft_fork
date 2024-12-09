@@ -1,55 +1,80 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rfani <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/09 12:53:53 by rfani             #+#    #+#             */
+/*   Updated: 2024/12/09 12:53:57 by rfani            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <stdlib.h>
-#include <stdio.h>
+//#include <stdio.h>
+//
+//char		**ft_split(char const *s, char c);
+static char	*ft_chunk(char const *s, int *s_index, char c);
 
-char	**ft_split(char const  *s, char c);
-
-int	main(void)
-{
-//	char	*str = "How are you doing today?";
-	char	*str = "hello!";
-	char	delimiter = ' ';
-	char	**split; 
-	int		i;
-
-	split = ft_split(str, delimiter);
-	i = 0;
-	while (split[i] != NULL)
-	{
-		printf("%s\n", split[i]);
-		i++;
-	}
-	return (0);
-}
+//int	main(void)
+//{
+////	char	*str = "How are you doing today?";
+//	char	*str = "hello!";
+//	char	delimiter = ' ';
+//	char	**split; 
+//	int		i;
+//
+//	split = ft_split(str, delimiter);
+//	i = 0;
+//	while (split[i] != NULL)
+//	{
+//		printf("%s\n", split[i]);
+//		i++;
+//	}
+//	return (0);
+//}
 
 char	**ft_split(char const *s, char c)
 {
 	char	**split;
-	size_t	i;
-	size_t	j;
-	size_t	k;
+	int		split_index;
+	int		s_index;
 
-	split = ft_calloc(ft_strlen(s), sizeof(char *));
-	split[0] = ft_calloc(ft_strlen(s)*ft_strlen(s), sizeof(char));
-	i = 0;
-	k = 0;
-	while (s[k] != '\0' )
+	split = malloc((ft_strlen(s) / 2 + 1) * sizeof(char *));
+	if (!split)
+		return (NULL);
+	split_index = 0;
+	s_index = 0;
+	while (s[s_index] != '\0' )
 	{
-		j = 0;
-		while (s[k] != c)
+		if (s[s_index] != c)
 		{
-			split[i][j] = s[k]
-			j++;
-			k++;
+			split[split_index] = ft_chunk(s, &s_index, c);
+			split_index++;
 		}
-		if (j != 0)
-		{
-			i++;
-			*split[i] = split[0] + j + 1;
-		
-		i++;
-		k++;
+		s_index++;
 	}
-	split[i] = NULL;
+	split[split_index] = NULL;
 	return (split);
+}
+
+static char	*ft_chunk(char const *s, int *s_index, char c)
+{
+	char	*chunk;
+	int		i;
+
+	chunk = ft_calloc(ft_strlen(s) - *s_index + 1, sizeof(char));
+	if (!chunk)
+		return (NULL);
+	i = 0;
+	while (s[*s_index] != c && s[*s_index] != '\0')
+	{
+		chunk[i] = s[*s_index];
+		i++;
+		(*s_index)++;
+	}
+	if (s[*s_index] == '\0')
+		(*s_index)--;
+	return (chunk);
 }
