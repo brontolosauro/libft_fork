@@ -12,27 +12,44 @@
 
 #include "libft.h"
 #include <stdlib.h>
-//#include <stdio.h>
-//#include <bsd/string.h>
-//
-//size_t	ft_strlcat(char *dst, const char *src, size_t size);
-//
-//int	main(void)
-//{
-//	char	*src = "pqrstuvwz";
-//	char	*dst = "abcd";
-//	size_t	size = 0;
-//	size_t	res;
+#include <stdio.h>
+#include <bsd/string.h>
+
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
+
+int	main(void)
+{
+	char	*dst = "pqrstuvwz";
+	char	*src = "abcd";
+	char	*o_dst = "pqrstuvwz";
+	char	*o_src = "abcd";
+	size_t	size = 20;
+	size_t	res;
 //	while (size < 11)
 //	{
-//		res = ft_strlcat(src, dst, size);
-//		printf("ft_strlcat(\"%s\", \"%s\", %lu) = %lu\n", src, dst, size, res);
-//		res = ft_strlcat(src, dst, size);
-//		printf("strlcat(\"%s\", \"%s\", %lu) = %lu\n", src, dst, size, res);
+//		res = ft_strlcat(dst, src, size);
+//		printf("ft_strlcat(\"%s\", \"%s\", %lu) = %lu\n", dst, src, size, res);
+//		printf("%s\n", dst);
+//		*dst = "pqrstuvwz";
+//		*src = "abcd";
+//		res = ft_strlcat(dst, src, size);
+//		printf("strlcat(\"%s\", \"%s\", %lu) = %lu\n", dst, src, size, res);
+//		printf("%s\n", dst);
 //		size++;
 //	}
-//	return (0);
-//}
+//	*dst = "pqrstuvwz";
+//	*src = "abcd";
+//	size = 20;
+	printf("ft_strlcat(\"%s\", \"%s\", %lu) = ", dst, src, size);
+	res = ft_strlcat(dst, src, size);
+	printf("%lu\n", res);
+	printf("%s\n", dst);
+	printf("strlcat(\"%s\", \"%s\", %lu) = ", o_dst, o_src, size);
+	res = strlcat(o_dst, o_src, size);
+	printf("%lu\n", res);
+	printf("%s\n", dst);
+	return (0);
+}
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
@@ -47,16 +64,16 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	{
 		while (i < (size - dst_len - 1) && src[i] != '\0')
 		{
-			dst[dst_len + i] = src[i];
+			*(dst + dst_len + i) = src[i];
 			i++;
 		}
 		if (src[i] == '\0')
 		{
-			dst[dst_len + i + 1] = '\0';
+			*(dst + dst_len + i + 1) = '\0';
 			return (dst_len + src_len);
 		}
 		else
 			return (size);
 	}
-	return (size);
+	return (size + src_len);
 }
