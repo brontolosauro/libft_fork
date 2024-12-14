@@ -12,68 +12,59 @@
 
 #include "libft.h"
 #include <stdlib.h>
-#include <stdio.h>
-#include <bsd/string.h>
-
-size_t	ft_strlcat(char *dst, const char *src, size_t size);
-
-int	main(void)
-{
-	char	*dst = "pqrstuvwz";
-	char	*src = "abcd";
-	char	*o_dst = "pqrstuvwz";
-	char	*o_src = "abcd";
-	size_t	size = 20;
-	size_t	res;
-//	while (size < 11)
-//	{
-//		res = ft_strlcat(dst, src, size);
-//		printf("ft_strlcat(\"%s\", \"%s\", %lu) = %lu\n", dst, src, size, res);
-//		printf("%s\n", dst);
-//		*dst = "pqrstuvwz";
-//		*src = "abcd";
-//		res = ft_strlcat(dst, src, size);
-//		printf("strlcat(\"%s\", \"%s\", %lu) = %lu\n", dst, src, size, res);
-//		printf("%s\n", dst);
-//		size++;
-//	}
-//	*dst = "pqrstuvwz";
-//	*src = "abcd";
-//	size = 20;
-	printf("ft_strlcat(\"%s\", \"%s\", %lu) = ", dst, src, size);
-	res = ft_strlcat(dst, src, size);
-	printf("%lu\n", res);
-	printf("%s\n", dst);
-	printf("strlcat(\"%s\", \"%s\", %lu) = ", o_dst, o_src, size);
-	res = strlcat(o_dst, o_src, size);
-	printf("%lu\n", res);
-	printf("%s\n", dst);
-	return (0);
-}
+//#include <stdio.h>
+//#include <bsd/string.h>
+//
+//size_t	ft_strlcat(char *dst, const char *src, size_t size);
+//
+//int	main(void)
+//{
+////	char	*pqr_long = "pqrstuvwz";
+////	char	*abc_short = "abcd";
+////	char	*pqr_short = "pqrs";
+////	char	*abc_long = "abcdefghi";
+////	char	*dst = malloc(20 * sizeof(char));
+////	char	*dst_o = malloc(20 * sizeof(char));
+//	char	*dst = ft_calloc(15, sizeof(char));
+//	char	*dst_o = ft_calloc(15, sizeof(char));
+//	size_t	size = 15;
+//	size_t	res;
+////	char	*src = abc_short;
+//	char	*src = "lorem ipsum dolor sit amet";
+//
+////	ft_memcpy(dst_o, pqr_long, ft_strlen(pqr_long));
+//	memset(dst_o, 'r', 14);
+//	printf("strlcat(\"%s\", \"%s\", %lu) = ", dst_o, src, size);
+//	res = strlcat(dst_o, src, size);
+//	printf("%lu\n", res);
+//	printf("%s\n", dst_o);
+////	ft_memcpy(dst, pqr_long, ft_strlen(pqr_long));
+//	memset(dst, 'r', 14);
+//	printf("ft_strlcat(\"%s\", \"%s\", %lu) = ", dst, src, size);
+//	res = ft_strlcat(dst, src, size);
+//	printf("%lu\n", res);
+//	printf("%s\n", dst);
+//
+//	return (0);
+//}
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	i;
 	size_t	dst_len;
 	size_t	src_len;
 
-	i = 0;
 	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
-	if (size > dst_len + 1)
+	if (size < dst_len + 1)
+		return (size + src_len);
+	else if (size == dst_len + 1)
+		return (dst_len + src_len);
+	else if (size < src_len + dst_len + 1)
 	{
-		while (i < (size - dst_len - 1) && src[i] != '\0')
-		{
-			*(dst + dst_len + i) = src[i];
-			i++;
-		}
-		if (src[i] == '\0')
-		{
-			*(dst + dst_len + i + 1) = '\0';
-			return (dst_len + src_len);
-		}
-		else
-			return (size);
+		ft_memcpy(dst + dst_len, src, size - dst_len -1);
+		*(dst + size - 1) = '\0';
 	}
-	return (size + src_len);
+	else
+		ft_memcpy(dst + dst_len, src, src_len + 1);
+	return (dst_len + src_len);
 }
