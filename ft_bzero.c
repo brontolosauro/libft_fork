@@ -17,10 +17,13 @@ void	ft_bzero(void *s, size_t len)
 {
 	size_t	i;
 
-	i = 0;
-	while (i < len)
+	if (s != NULL)
 	{
-		*((char *)s + i) = '\0';
-		i++;
+		i = 0;
+		while (i < len)
+		{
+			*((char *)s + i) = '\0';
+			i++;
+		}
 	}
 }
