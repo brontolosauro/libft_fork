@@ -19,6 +19,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	j;
 	size_t	len_little;
 
+	if (!big || !little)
+		return (NULL);
 	i = 0;
 	j = 0;
 	len_little = ft_strlen(little);
