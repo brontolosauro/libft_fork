@@ -5,12 +5,12 @@
 
 int	main()
 {
-	//ft_itoa
-	int n = -21;
-//	printf("n = %d\n", n);
-	int r = n % 10;
-	n /= 10;
-	printf("21 / 10 = %d, con resto = %d\n", n, r); 
+//	//ft_itoa
+//	int n = -21;
+////	printf("n = %d\n", n);
+//	int r = n % 10;
+//	n /= 10;
+//	printf("21 / 10 = %d, con resto = %d\n", n, r); 
 //	//ft_strjoin
 //	char *s1 = "my favorite animal is";
 //	char *s2 = " ";
@@ -45,18 +45,20 @@ int	main()
 //	ft_memset(s, c, len);
 //	printf("after memset(s, %d, %lu) = %s\n", c, len,  s);
 //
-//	//ft_memcmp
+	//ft_memcmp
 //	char myStr1[] = "ABBD";
-//	char myStr2[] = "ABCE";
+	char *myStr1 = (void *)0;
+	char myStr2[] = "ABCE";
 //	int cmp = ft_memcmp(myStr1, myStr2, 3);
-//
-//	if (cmp > 0) {
-//		printf("%s is greater than %s\n", myStr1, myStr2);
-//	} else if (cmp < 0) {
-//		printf("%s is greater than %s\n", myStr2, myStr1);
-//	} else {
-//		printf("%s is equal to %s\n", myStr1, myStr2);
-//	}
+	int cmp = memcmp(myStr1, myStr2, 3);
+
+	if (cmp > 0) {
+		printf("%s is greater than %s\n", myStr1, myStr2);
+	} else if (cmp < 0) {
+		printf("%s is greater than %s\n", myStr2, myStr1);
+	} else {
+		printf("%s is equal to %s\n", myStr1, myStr2);
+	}
 //	//ft_memchr
 //	char myStr[] = "Hello World!";
 //	char *myPtr = (char*)ft_memchr(myStr, 'o', 12);
