@@ -41,6 +41,8 @@ char	**ft_split(char const *s, char c)
 	int		split_index;
 	int		s_index;
 
+	if (!s)
+		return (NULL);
 	split = malloc((ft_strlen(s) / 2 + 1) * sizeof(char *));
 	if (!split)
 		return (NULL);
