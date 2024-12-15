@@ -20,6 +20,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	match = NULL;
 	i = 0;
+	if (!s)
+		return (match);
 	while (i < n)
 	{
 		if (*((unsigned char *)s + i) == (unsigned char)c)
