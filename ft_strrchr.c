@@ -18,8 +18,10 @@ char	*ft_strrchr(const char *s, int c)
 	size_t	i;
 	size_t	str_len;
 
-	str_len = ft_strlen(s);
 	match = NULL;
+	if (!s)
+		return (match);
+	str_len = ft_strlen(s);
 	i = 0;
 	while (i <= str_len)
 	{
