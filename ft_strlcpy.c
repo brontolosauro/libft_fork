@@ -6,12 +6,12 @@
 /*   By: rfani <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 10:59:34 by rfani             #+#    #+#             */
-/*   Updated: 2024/12/02 10:59:36 by rfani            ###   ########.fr       */
+/*   Updated: 2024/12/20 23:08:05 by rfani            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stdio.h>
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {

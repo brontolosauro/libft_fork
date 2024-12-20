@@ -6,12 +6,12 @@
 /*   By: rfani <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 20:08:02 by rfani             #+#    #+#             */
-/*   Updated: 2024/12/06 20:08:12 by rfani            ###   ########.fr       */
+/*   Updated: 2024/12/20 23:06:14 by rfani            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

@@ -6,12 +6,12 @@
 /*   By: rfani <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 20:08:46 by rfani             #+#    #+#             */
-/*   Updated: 2024/12/06 20:08:52 by rfani            ###   ########.fr       */
+/*   Updated: 2024/12/20 23:05:40 by rfani            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

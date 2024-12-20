@@ -6,12 +6,12 @@
 /*   By: rfani <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 11:30:24 by rfani             #+#    #+#             */
-/*   Updated: 2024/12/10 14:25:20 by rfani            ###   ########.fr       */
+/*   Updated: 2024/12/20 23:05:28 by rfani            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stdlib.h>
+#include "libft.h"
 //#include <stdio.h>
 //
 //char	*ft_itoa(int n);

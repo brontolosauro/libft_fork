@@ -6,12 +6,12 @@
 /*   By: rfani <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 16:53:05 by rfani             #+#    #+#             */
-/*   Updated: 2024/12/02 17:07:29 by rfani            ###   ########.fr       */
+/*   Updated: 2024/12/20 23:04:28 by rfani            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stdlib.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t len)
 {

@@ -6,12 +6,12 @@
 /*   By: rfani <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 10:52:41 by rfani             #+#    #+#             */
-/*   Updated: 2024/12/09 10:55:32 by rfani            ###   ########.fr       */
+/*   Updated: 2024/12/20 23:08:51 by rfani            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stdlib.h>
+#include "libft.h"
 //#include <stdio.h>
 //#include <string.h>
 //

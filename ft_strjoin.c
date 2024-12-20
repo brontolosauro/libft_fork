@@ -6,12 +6,12 @@
 /*   By: rfani <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 10:52:32 by rfani             #+#    #+#             */
-/*   Updated: 2024/12/09 10:53:04 by rfani            ###   ########.fr       */
+/*   Updated: 2024/12/20 23:07:35 by rfani            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stdlib.h>
+#include "libft.h"
 //#include <stdio.h>
 //
 //char	*ft_strjoin(char const *s1, char const *s2);

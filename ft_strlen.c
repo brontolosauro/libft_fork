@@ -6,12 +6,12 @@
 /*   By: rfani <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 13:28:22 by rfani             #+#    #+#             */
-/*   Updated: 2024/12/02 16:41:23 by rfani            ###   ########.fr       */
+/*   Updated: 2024/12/20 22:53:47 by rfani            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
-#include <stdio.h>
 
 size_t	ft_strlen(const char *s)
 {

@@ -6,12 +6,12 @@
 /*   By: rfani <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 15:56:42 by rfani             #+#    #+#             */
-/*   Updated: 2024/12/02 16:22:31 by rfani            ###   ########.fr       */
+/*   Updated: 2024/12/20 23:07:21 by rfani            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strdup(const char *s)
 {
