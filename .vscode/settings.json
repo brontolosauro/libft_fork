@@ -1,0 +1,10 @@
+{
+    "editor.detectIndentation": false,
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.tabCompletion": "on",
+	"editor.wordWrap": "wordWrapColumn",
+	"editor.insertSpaces": false,
+	"files.associations": {
+		"libft.h": "c"
+	}
+}
