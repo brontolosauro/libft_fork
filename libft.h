@@ -6,7 +6,7 @@
 /*   By: rfani <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 13:03:25 by rfani             #+#    #+#             */
-/*   Updated: 2024/12/20 22:54:36 by rfani            ###   ########.fr       */
+/*   Updated: 2024/12/21 07:50:32 by rfani            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 #endif
