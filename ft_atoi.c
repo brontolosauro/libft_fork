@@ -6,7 +6,7 @@
 /*   By: rfani <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 10:57:29 by rfani             #+#    #+#             */
-/*   Updated: 2024/12/20 16:36:19 by rfani            ###   ########.fr       */
+/*   Updated: 2024/12/21 12:52:22 by rfani            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 // #include <stdlib.h>
 //
 // int	ft_atoi(const char *str);
-int	pramble(const char *str, int *i, int *sign);
-int	ft_isspace(char c);
-int	issign(const char *str, int *i, int *sign);
+static int	pramble(const char *str, int *i, int *sign);
+static int	ft_isspace(char c);
+static int	issign(const char *str, int *i, int *sign);
 //
 // int main()
 // {
@@ -52,7 +52,7 @@ int	ft_atoi(const char *str)
 	return (sign * n);
 }
 
-int	pramble(const char *str, int *i, int *sign)
+static int	pramble(const char *str, int *i, int *sign)
 {
 	while (ft_isspace(str[*i]) && str[*i])
 		*i += 1;
@@ -64,7 +64,7 @@ int	pramble(const char *str, int *i, int *sign)
 		return (0);
 }
 
-int	ft_isspace(char c)
+static int	ft_isspace(char c)
 {
 	if (c == ' ' || c == '\t' || c == '\n' || c == '\v' || c == '\f'
 		|| c == '\r')
@@ -72,7 +72,7 @@ int	ft_isspace(char c)
 	return (0);
 }
 
-int	issign(const char *str, int *i, int *sign)
+static int	issign(const char *str, int *i, int *sign)
 {
 	if (str[*i] == '-')
 	{

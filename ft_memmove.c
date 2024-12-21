@@ -6,7 +6,7 @@
 /*   By: rfani <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 10:52:48 by rfani             #+#    #+#             */
-/*   Updated: 2024/12/20 23:06:43 by rfani            ###   ########.fr       */
+/*   Updated: 2024/12/21 12:51:46 by rfani            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 //#include <stdio.h>
 //
 //void	*ft_memmove(void *dest, const void *src, size_t n);
-void	*ft_move_bw(void *dest, const void *src, size_t n);
-void	*ft_move_fw(void *dest, const void *src, size_t n);
+static void	*move_bw(void *dest, const void *src, size_t n);
+static void	*move_fw(void *dest, const void *src, size_t n);
 //
 //int	main(void)
 //{
@@ -41,15 +41,15 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	if (dest == src)
 		return (dest);
 	if (src + n >= dest && dest > src)
-		ft_move_bw(dest, src, n);
+		move_bw(dest, src, n);
 	else if (dest + n > src && src > dest)
-		ft_move_fw(dest, src, n);
+		move_fw(dest, src, n);
 	else
 		ft_memcpy(dest, src, n);
 	return (dest);
 }
 
-void	*ft_move_bw(void *dest, const void *src, size_t n)
+static void	*move_bw(void *dest, const void *src, size_t n)
 {
 	size_t	i;
 
@@ -62,7 +62,7 @@ void	*ft_move_bw(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
-void	*ft_move_fw(void *dest, const void *src, size_t n)
+static void	*move_fw(void *dest, const void *src, size_t n)
 {
 	size_t	i;
 

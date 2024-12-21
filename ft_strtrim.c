@@ -6,7 +6,7 @@
 /*   By: rfani <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 10:52:41 by rfani             #+#    #+#             */
-/*   Updated: 2024/12/20 23:08:51 by rfani            ###   ########.fr       */
+/*   Updated: 2024/12/21 12:51:25 by rfani            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 //#include <string.h>
 //
 //char	*ft_strtrim(char const *s1, char const *set);
-int	ft_trim_head(char const *s1, char const *set);
-int	ft_trim_tail(char const *s1, char const *set);
+static int	trim_head(char const *s1, char const *set);
+static int	trim_tail(char const *s1, char const *set);
 //
 //int		main(void)
 //{
@@ -52,8 +52,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 		ft_memcpy(new_str, s1, ft_strlen(s1) + 1);
 		return (new_str);
 	}
-	new_start = ft_trim_head(s1, set);
-	new_len = ft_trim_tail(s1, set) + 1 - new_start;
+	new_start = trim_head(s1, set);
+	new_len = trim_tail(s1, set) + 1 - new_start;
 	if (new_len <= 0)
 		new_len = 0;
 	new_str = ft_calloc(new_len + 1, sizeof(char));
@@ -62,7 +62,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return ((char *)ft_memcpy(new_str, &(s1[new_start]), new_len));
 }
 
-int	ft_trim_head(char const *s1, char const *set)
+static int	trim_head(char const *s1, char const *set)
 {
 	int	i;
 
@@ -72,7 +72,7 @@ int	ft_trim_head(char const *s1, char const *set)
 	return (i);
 }
 
-int	ft_trim_tail(char const *s1, char const *set)
+static int	trim_tail(char const *s1, char const *set)
 {
 	int	i;
 

@@ -6,7 +6,7 @@
 /*   By: rfani <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 12:53:53 by rfani             #+#    #+#             */
-/*   Updated: 2024/12/20 23:07:06 by rfani            ###   ########.fr       */
+/*   Updated: 2024/12/21 12:49:13 by rfani            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 //#include <stdio.h>
 //
 //char		**ft_split(char const *s, char c);
-static char	*ft_chunk(char const *s, int *s_index, char c);
+static char	*chunk(char const *s, int *s_index, char c);
 
 //int	main(void)
 //{
@@ -52,7 +52,7 @@ char	**ft_split(char const *s, char c)
 	{
 		if (s[s_index] != c)
 		{
-			split[split_index] = ft_chunk(s, &s_index, c);
+			split[split_index] = chunk(s, &s_index, c);
 			split_index++;
 		}
 		s_index++;
@@ -61,7 +61,7 @@ char	**ft_split(char const *s, char c)
 	return (split);
 }
 
-static char	*ft_chunk(char const *s, int *s_index, char c)
+static char	*chunk(char const *s, int *s_index, char c)
 {
 	char	*chunk;
 	int		i;
